@@ -4,7 +4,25 @@ import styled from 'styled-components/macro';
 const Hero = () => {
   return (
     <Wrapper>
-      <HeroImage src="/images/hero-img.jpg" />
+      <HeroImage >
+        <source 
+          type="image/avif"
+          srcSet="
+            /images/hero-img.avif 1x,
+            /images/hero-img.avif@2 2x,
+            /images/hero-img.avif@3 3x,
+            "
+        />
+        <source 
+          type="image/jpg"
+          srcSet="
+            /images/hero-img.jpg 1x,
+            /images/hero-img.jpg@2 2x,
+            /images/hero-img.jpg@3 3x,
+            "
+        />
+        <img src="/images/hero-img.jpg" alt="Header for Content. Picture of a cat staring intensely at you."/>
+      </HeroImage>
       <Swoop src="/swoop.svg" />
     </Wrapper>
   );
@@ -20,7 +38,7 @@ const Wrapper = styled.section`
   background: hsl(0deg 0% 1%);
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled.picture`
   display: block;
   width: 500px;
   height: 500px;
