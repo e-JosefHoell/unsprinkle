@@ -67,6 +67,7 @@ const Tag = styled.li`
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
+  line-height: 2;
   color: var(--color-gray-800);
 `;
 
